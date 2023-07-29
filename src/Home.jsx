@@ -1,8 +1,23 @@
-import React, { useContext } from 'react'
-import { FaBars } from 'react-icons/fa'
+import React, { useContext, useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 const Home = () => {
-  return <h2>home component</h2>
-}
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <main>
+      <button className="sidebar-toggle">
+        <FaBars />
+      </button>
+      <button
+        className="btn"
+        onClick={() => {
+          setShowModal(!showModal), console.log(showModal);
+        }}
+      >
+        Show Modal
+      </button>
+    </main>
+  );
+};
 
-export default Home
+export default Home;
